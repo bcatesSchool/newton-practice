@@ -44,15 +44,3 @@ def optimize(f, x0, tol=1e-5):
         x = temp
 
     return x
-
-
-def main():
-    """
-    Completes Newton's Method optimization with function and starting point of choice.
-    """
-    est = optimize(np.cos, 2.5)
-    print(est)
-
-
-if __name__ == "__main__":
-    main()
