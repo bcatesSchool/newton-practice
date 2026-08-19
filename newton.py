@@ -1,7 +1,7 @@
 import numpy as np
 
 def f(x):
-    return np.cos(x)
+    return f(x)
 
 def first_derivative(f, x, h=1e-5):
     return (f(x+h) - f(x))/h
