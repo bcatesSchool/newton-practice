@@ -19,7 +19,7 @@ def optimize(f, x0, tol=1e-5):
     """
     Function that implements Newton's method for optimization.
     """
-    
+
     if not callable(f):
         raise TypeError(f"Argument is not a function, it is of type {type(f)}")
 
@@ -27,7 +27,7 @@ def optimize(f, x0, tol=1e-5):
         raise TypeError(f"Argument must be numberic, it is of type {type(x0)}")
 
     x = x0
-    
+
     diff = float("inf")
 
     while diff > tol:  # Stopping criterion for Newton's Method.
