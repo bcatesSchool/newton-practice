@@ -28,7 +28,7 @@ dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://github.com/bcatesSchool/newton-practice"
-Issues = https://github.com/bcatesSchool/newton-practice/issues
+Issues = "https://github.com/bcatesSchool/newton-practice/issues"
 
 [tool.setuptools]
 packages = ["newton"]
