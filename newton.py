@@ -1,4 +1,5 @@
 import numpy as np
+import warnings
 
 
 def first_derivative(f, x, h=1e-5):
@@ -22,8 +23,15 @@ def optimize(f, x0, tol=1e-5):
     """
     Function that implements Newton's method for optimization.
     """
-    x = x0
+    
+    if not callable(f):
+        raise TypeError(f"Argument is not a function, it is of type {type(f)}")
 
+    if isinstance(x0, (int, float)) == False:
+        raise TypeError(f"Argument must be numberic, it is of type {type(x0)}")
+
+    x = x0
+    
     diff = float("inf")
 
     while diff > tol:  # Stopping criterion for Newton's Method.
@@ -31,7 +39,7 @@ def optimize(f, x0, tol=1e-5):
         second = second_derivative(f, x)
 
         if second == 0:  # Edge-case check to avoid division by 0.
-            continue
+            break
 
         frac = float(first / second)
 
@@ -42,5 +50,8 @@ def optimize(f, x0, tol=1e-5):
         diff = abs(temp - x)
 
         x = temp
+
+        if x > 1e7 or x < 1e7:
+            raise RuntimeError(f"Operation is divering.")
 
     return x
