@@ -1,7 +1,3 @@
-import numpy as np
-import warnings
-
-
 def first_derivative(f, x, h=1e-5):
     """
     Returns the first derivative of a function f at a value x.
@@ -52,6 +48,6 @@ def optimize(f, x0, tol=1e-5):
         x = temp
 
         if x > 1e7 or x < 1e7:
-            raise RuntimeError(f"Operation is divering.")
+            raise RuntimeError("Operation is divering.")
 
     return x
