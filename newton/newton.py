@@ -47,7 +47,7 @@ def optimize(f, x0, tol=1e-5):
 
         x = temp
 
-        if x > 1e7 or x < 1e7:
+        if x > 1e7 or x < -1e7:
             raise RuntimeError("Operation is divering, going to inf (-inf).")
 
     return x

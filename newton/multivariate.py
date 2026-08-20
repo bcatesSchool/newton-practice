@@ -6,7 +6,7 @@ def check_if_vector(x):
   return x.ndim == 1
 
 
-def optimize(f, x0, tolerance=1a-5):
+def optimize(f, x0, tolerance=1e-5):
   """Function that implements multivariate Newton's method using scipy.differentiate."""
   x = np.asarray(x0, dtype=np.float64)
 
@@ -25,10 +25,10 @@ def optimize(f, x0, tolerance=1a-5):
 
   while np.any(diff > tolerance):
     # Calculate gradient
-    grad_vector = jacobian(f, x).df
+    grad_vector = jacobian(f, x).df[0]
 
     # Calculate Hessian matrix
-    hessian_matrix = hessian(f, x).ddf
+    hessian_matrix = np.squeeze(hessian(f, x).ddf)
 
     # Solve the system H * step = grad instead of manual explicit inverting
     try:
