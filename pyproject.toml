@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools >= 70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "newton"
+authors = [
+  { name="Brileigh Cates", email="brileigh_cates@berkeley.edu" },
+]
+description = "A Python library to implement Newton's optimization for univariate or multivaraite x"
+readme = "README.md"
+
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+license = "BSD-3-Clause"
+license-files = ["LICEN[CS]E*"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+keywords = ["tools", "newton"]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/bcatesSchool/newton-practice"
+Issues = https://github.com/bcatesSchool/newton-practice/issues
+
+[tool.setuptools]
+packages = ["newton"]
+
+[tool.setuptools.dynamic]
+version = {attr = "newton.__version__"}
