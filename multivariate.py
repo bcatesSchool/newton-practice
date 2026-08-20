@@ -6,7 +6,7 @@ def check_if_vector(x):
   return x.ndim == 1
 
 
-def optimize(f, x0, tol=1e-5):
+def optimize(f, x0, tolerance=1a-5):
   """Function that implements multivariate Newton's method using scipy.differentiate."""
   x = np.asarray(x0, dtype=np.float64)
 
@@ -23,7 +23,7 @@ def optimize(f, x0, tol=1e-5):
 
   diff = np.full(shape=x.shape, fill_value=float("inf"))
 
-  while np.any(diff > tol):
+  while np.any(diff > tolerance):
     # Calculate gradient
     grad_vector = jacobian(f, x).df
 
